@@ -15,10 +15,10 @@ jobs:
     steps:
 
       - name: Checkout ScratchAddons/Website
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Checkout ScratchAddons/schema-dist-updater
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: ScratchAddons/schema-dist-updater
           path: script
@@ -26,7 +26,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 20.x
 
       - name: Cache dependencies
         uses: actions/cache@v3
@@ -42,7 +42,7 @@ jobs:
         run: node script/index.js
 
       - name: Generate token 
-        uses: tibdex/github-app-token@v1
+        uses: tibdex/github-app-token@v2
         id: generate-token
         with:
           app_id: ${{ secrets.BOT_APP_ID }}

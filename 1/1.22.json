@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"$id": "https://raw.githubusercontent.com/ScratchAddons/manifest-schema/master/1/1.20.json",
+	"$id": "https://raw.githubusercontent.com/ScratchAddons/manifest-schema/master/1/1.22.json",
 	"title": "Scratch Addons addon manifest",
 	"description": "The manifest that describes an addon.",
 	"type": "object",
@@ -293,7 +293,7 @@
 			"oneOf": [
 				{
 					"type": "string",
-					"description": "A match rule for any URL on Scratch origin. The script will execute will execute in all pages.",
+					"description": "A match rule for any URL on Scratch origin. The script will execute in all pages.",
 					"const": "*"
 				},
 				{
@@ -374,6 +374,11 @@
 				"name": {
 					"type": "string",
 					"description": "The name of the setting.",
+					"minLength": 1
+				},
+				"description": {
+					"type": "string",
+					"description": "The description of the setting shown in a tooltip.",
 					"minLength": 1
 				},
 				"id": {
@@ -606,6 +611,7 @@
 				"enum": [
 					"community",
 					"editor",
+					"player",
 					"popup",
 					"theme",
 					"beta",
@@ -616,7 +622,6 @@
 					"easterEgg",
 					"codeEditor",
 					"costumeEditor",
-					"projectPlayer",
 					"editorMenuBar",
 					"projectPage",
 					"profiles",
@@ -628,6 +633,7 @@
 				"enum": [
 					"community",
 					"editor",
+					"player",
 					"popup"
 				]
 			},
